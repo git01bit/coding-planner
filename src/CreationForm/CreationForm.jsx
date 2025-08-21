@@ -2,7 +2,7 @@ import styles from "./CreationForm.module.css";
 
 function CreationForm() {
   return (
-    <section>
+    <section className="deactive">
       <input
         type="text"
         placeholder="نام پروژه"

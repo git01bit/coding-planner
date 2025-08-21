@@ -1,0 +1,77 @@
+h1 {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+}
+
+.stepsContainer {
+  margin-top: 32px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  padding: 24px;
+  border-bottom: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.step:last-of-type {
+  border: none;
+}
+
+.step p::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 16px 0 8px;
+  border-radius: 100%;
+  background-color: #000;
+}
+
+.done {
+  background-color: rgba(46, 125, 50, 0.1);
+  color: rgba(46, 125, 50, 1);
+}
+
+.done p::before {
+  background-color: rgba(46, 125, 50, 1);
+}
+
+.doneBtn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  color: rgba(198, 40, 40, 1);
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.done .doneBtn {
+  color: rgba(46, 125, 50, 1);
+}
+
+.projectContainer button {
+  width: 100%;
+  padding: 8px 16px;
+  margin-top: 64px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: rgba(198, 40, 40, 1);
+  background-color: rgba(198, 40, 40, 0.1);
+  cursor: pointer;
+  transition: border 300ms ease, color 300ms ease;
+}
+
+.projectContainer button:hover {
+  border: 1px solid rgba(198, 40, 40, 1);
+}
