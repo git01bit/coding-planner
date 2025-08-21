@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  outline: none;
+}
+
+body {
+  max-width: 640px;
+  height: 100dvh;
+  margin: 16px auto;
+  padding: 0 16px 0 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: justify;
+}
