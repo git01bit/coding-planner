@@ -40,7 +40,6 @@ function CreationForm({ project, setProject }) {
       ),
     }));
   }
-  console.log(project);
 
   return (
     <section>

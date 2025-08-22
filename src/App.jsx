@@ -4,7 +4,7 @@ import "./App.css";
 import { useState } from "react";
 
 import CreationForm from "./CreationForm/CreationForm";
-import Project from "./Project/Project";
+import ProjectView from "./ProjectView/ProjectView";
 
 function App() {
   const [project, setProject] = useState({
@@ -17,7 +17,8 @@ function App() {
   return (
     <>
       <CreationForm project={project} setProject={setProject} />
-      <Project />
+      <br />
+      <ProjectView project={project} />
     </>
   );
 }
