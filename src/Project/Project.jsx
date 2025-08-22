@@ -2,7 +2,7 @@ import styles from "./Project.module.css";
 
 function Project() {
   return (
-    <section>
+    <section className="deactive">
       <h1>عنوان پروژه</h1>
 
       <div className={styles.projectContainer}>
