@@ -17,7 +17,13 @@ function App() {
   const [isProjectCreated, setIsProjectCreated] = useState(false);
 
   if (isProjectCreated) {
-    return <ProjectView project={project} setProject={setProject} />;
+    return (
+      <ProjectView
+        project={project}
+        setProject={setProject}
+        setIsProjectCreated={setIsProjectCreated}
+      />
+    );
   } else {
     return (
       <CreationForm

@@ -1,6 +1,6 @@
 import styles from "./ProjectView.module.css";
 
-function ProjectView({ project, setProject }) {
+function ProjectView({ project, setProject, setIsProjectCreated }) {
   function toggleStepStatus(stepId) {
     setProject((p) => ({
       ...p,
@@ -10,6 +10,16 @@ function ProjectView({ project, setProject }) {
           : step
       ),
     }));
+  }
+
+  function deleteProject() {
+    setProject({
+      projectTitle: "",
+      steps: [
+        { stepId: 1, stepTitle: "", stepDescription: "", isStepDone: false },
+      ],
+    });
+    setIsProjectCreated(false);
   }
 
   return (
@@ -37,7 +47,9 @@ function ProjectView({ project, setProject }) {
           ))}
         </div>
 
-        <button type="button">حذف پروژه</button>
+        <button type="button" onClick={deleteProject}>
+          حذف پروژه
+        </button>
       </div>
     </section>
   );
