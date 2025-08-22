@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./CreationForm.module.css";
 
-function CreationForm({ project, setProject }) {
+function CreationForm({ project, setProject, setIsProjectCreated }) {
   const [id, setId] = useState(2);
 
   function addNewStep() {
@@ -41,6 +41,10 @@ function CreationForm({ project, setProject }) {
     }));
   }
 
+  function createProject() {
+    setIsProjectCreated(true);
+  }
+
   return (
     <section>
       <input
@@ -71,7 +75,9 @@ function CreationForm({ project, setProject }) {
           <button type="button" onClick={addNewStep}>
             اضافه کردن فعالیت
           </button>
-          <button type="button">ایجاد پروژه</button>
+          <button type="button" onClick={createProject}>
+            ایجاد پروژه
+          </button>
         </div>
       </div>
     </section>

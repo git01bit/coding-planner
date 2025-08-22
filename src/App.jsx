@@ -14,13 +14,19 @@ function App() {
     ],
   });
 
-  return (
-    <>
-      <CreationForm project={project} setProject={setProject} />
-      <br />
-      <ProjectView project={project} />
-    </>
-  );
+  const [isProjectCreated, setIsProjectCreated] = useState(false);
+
+  if (isProjectCreated) {
+    return <ProjectView project={project} />;
+  } else {
+    return (
+      <CreationForm
+        project={project}
+        setProject={setProject}
+        setIsProjectCreated={setIsProjectCreated}
+      />
+    );
+  }
 }
 
 export default App;
