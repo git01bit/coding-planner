@@ -1,6 +1,17 @@
 import styles from "./ProjectView.module.css";
 
-function ProjectView({ project }) {
+function ProjectView({ project, setProject }) {
+  function toggleStepStatus(stepId) {
+    setProject((p) => ({
+      ...p,
+      steps: p.steps.map((step) =>
+        step.stepId === stepId
+          ? { ...step, isStepDone: !step.isStepDone }
+          : step
+      ),
+    }));
+  }
+
   return (
     <section>
       <h1>{project.projectTitle}</h1>
@@ -16,19 +27,14 @@ function ProjectView({ project }) {
 
               <p>{step.stepDescription}</p>
 
-              <span className={styles.doneBtn}>
+              <span
+                className={styles.doneBtn}
+                onClick={() => toggleStepStatus(step.stepId)}
+              >
                 {step.isStepDone ? "انجام شد" : "انجام نشده"}
               </span>
             </div>
           ))}
-
-          {/* <div className={`${styles.step} ${styles.done}`}>
-            <h2>مرحله دوم</h2>
-
-            <p>توضیحات مرحله دوم</p>
-
-            <span className={styles.doneBtn}>هنوز انجام نشده</span>
-          </div> */}
         </div>
 
         <button type="button">حذف پروژه</button>
