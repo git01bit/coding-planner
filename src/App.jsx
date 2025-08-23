@@ -1,5 +1,4 @@
 import "./assets/fonts/vazir/vazir.css";
-import "./App.css";
 
 import { useState, useEffect } from "react";
 
