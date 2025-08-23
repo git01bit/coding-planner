@@ -51,7 +51,6 @@ function CreationForm({ project, setProject, setIsProjectCreated }) {
         type="text"
         placeholder="نام پروژه"
         className={styles.projectNameInput}
-        value={project.projectTitle}
         onChange={(e) => saveProjectTitle(e)}
       />
 
