@@ -1,7 +1,7 @@
 import "./assets/fonts/vazir/vazir.css";
 import "./App.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import CreationForm from "./CreationForm/CreationForm";
 import ProjectView from "./ProjectView/ProjectView";
@@ -15,6 +15,11 @@ function App() {
   });
 
   const [isProjectCreated, setIsProjectCreated] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("project", JSON.stringify(project));
+    localStorage.setItem("isProjectCreated", JSON.stringify(isProjectCreated));
+  }, [project, isProjectCreated]);
 
   if (isProjectCreated) {
     return (
